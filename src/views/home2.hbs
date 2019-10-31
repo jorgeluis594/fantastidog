@@ -1,0 +1,70 @@
+<div class="container-fluid">
+        <div class="row mt-3 justify-content-around">
+            <div class="col-12 col-md-5">
+                <div class="row py-2 bg-fantastidog-verde body-fan text-center">
+                    <div class="col-12">
+                        <h4 class="text-dark">Pedidos de la semana</h4>
+                    </div>
+                    {{#if pedidos}}
+                    <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Edad</th>
+                                    <th>Pack</th>
+                                    <th>Temática</th>
+                                    <th>Entrega</th>
+                                    <th>Pago</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each pedidos}}
+                                <tr>
+                                    <td>{{nombre_mascota}}</td>
+                                    <td>{{edad}} año</td>
+                                    <td>{{pack}}</td>
+                                    <td>{{tematica}}</td>
+                                    <td>20/15/2019</td>
+                                    {{#eq estado _id}}
+                                    {{/eq}}
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                    </table>
+                    {{else}}
+                    <p class="h4">No hay pedidos</p>
+                    
+                    {{/if}}
+                </div>
+            </div>
+            <div class="col-12 col-md-5">
+                    <div class="row py-2 bg-fantastidog-verde body-fan text-center">
+                        <div class="col-12">
+                            <h4 class="text-dar">Pedidos del mes</h4>
+                        </div>
+                        <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Edad</th>
+                                        <th>Pack</th>
+                                        <th>Temática</th>
+                                        <th>Fecha entrega</th>
+                                        <th>Pago</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Carmela</td>
+                                        <td>1 año</td>
+                                        <td>45</td>
+                                        <td>Princesa</td>
+                                        <td>20/15/2019</td>
+                                        <td><span class="badge badge-success">Cancelado</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+        </div>
+</div>

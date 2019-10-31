@@ -1,0 +1,34 @@
+ <div class="container">
+        <div class="row mt-3">
+            <div class="col-12 col-md-6 offset-md-3 bg-fantastidog-verde  body-fan pt-3">
+                <div class="row text-center mb-3">
+                    <div class="col"><h4 class="text-dark">Registrar Pago</h4></div>
+                </div>
+                <form action="/agregar_pago/?_method=PUT" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    {{#with pedido}}
+                    <input type="hidden" name="id" value="{{_id}}">
+                    <div class="form-group row align-items-center">
+                        <span class="col-2 col-md-1 text-center text-dark justify-content-end"><i class="fas fa-paw"></i></span>
+                        <input type="text" class="form-control col-9 col-md-4" name="nombre_mascota" value="{{nombre_mascota}}" disabled>
+                        <span class="offset-md-1 col-2 col-md-1 text-center text-dark justify-content-end"><i class="fas fa-birthday-cake"></i></span>
+                        <input type="text" class="form-control col-9 col-md-4" name="pack" value="{{pack}}" disabled>  
+                    </div>
+                    <div class="form-group row align-items-center">
+                        <span class="col-2 col-md-1 text-center text-dark justify-content-end"><i class="fas fa-money-check-alt"></i></span>
+                        <select name="metodo_pago" class="form-control col-9 col-md-4">
+                            <option value="bcp">Bcp</option>
+                            <option value="interbank">Interbank</option>
+                            <option value="bbva">Bbva</option>
+                        </select>
+                        <span class="offset-md-1 col-2 col-md-1 text-center text-dark justify-content-end"><i class="fas fa-dollar-sign"></i></span>
+                        <input type="text" class="form-control col-9 col-md-4" name="importe" placeholder="Importe"> 
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Registrar pedido" class="btn btn-success btn-block">
+                    </div>
+                    {{/with}}
+                </form>
+            </div>
+        </div>
+    </div>
