@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/node-fantastidog',{
+mongoose.connect('mongodb+srv://jorgeluis:safira.123@fantastidog-pd5y0.mongodb.net/test?retryWrites=true&w=majority',{
     useCreateIndex:true,
     useNewUrlParser:true,
     useFindAndModify:false,
